@@ -15,6 +15,12 @@ import javax.ws.rs.core.Response.Status;
  */
 public class RESTAssert {
 
+	/**
+	 * The default status code that is thrown<br>
+	 * HTTP 412 (Precondition failed)
+	 */
+	private static final Status DEFAULT_STATUS_CODE = Status.PRECONDITION_FAILED;
+
 	// #############################################################
 	// Basic methods to assert true/false (used by all other assertions)
 	// #############################################################
@@ -27,8 +33,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed) if condition is <i>false</i>
 	 */
-	public static void assertTrue(boolean condition) {
-		RESTAssert.assertTrue(condition, Status.PRECONDITION_FAILED);
+	public static void assertTrue(final boolean condition) {
+		RESTAssert.assertTrue(condition, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -41,7 +47,7 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with given status code if condition is <i>false</i>
 	 */
-	public static void assertTrue(boolean condition, Status status) {
+	public static void assertTrue(final boolean condition, final Status status) {
 		RESTAssert.assertFalse(!condition, status);
 	}
 
@@ -53,8 +59,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed) if condition is <i>true</i>
 	 */
-	public static void assertFalse(boolean condition) {
-		RESTAssert.assertFalse(condition, Status.PRECONDITION_FAILED);
+	public static void assertFalse(final boolean condition) {
+		RESTAssert.assertFalse(condition, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -67,7 +73,7 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with given status code if condition is <i>true</i>
 	 */
-	public static void assertFalse(boolean condition, Status status) {
+	public static void assertFalse(final boolean condition, final Status status) {
 		if (condition) {
 			throw new WebApplicationException(status);
 		}
@@ -85,8 +91,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed)
 	 */
-	public static void assertNotNull(Object object) {
-		RESTAssert.assertNotNull(object, Status.PRECONDITION_FAILED);
+	public static void assertNotNull(final Object object) {
+		RESTAssert.assertNotNull(object, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -97,9 +103,9 @@ public class RESTAssert {
 	 * @param status
 	 *            the status code to throw
 	 * @throws WebApplicationException
-	 *             with status code 412 (Precondition failed)
+	 *             with given status code
 	 */
-	public static void assertNotNull(Object object, Status status) {
+	public static void assertNotNull(final Object object, final Status status) {
 		RESTAssert.assertTrue(object != null, status);
 	}
 
@@ -111,8 +117,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed)
 	 */
-	public static void assertNotEmpty(String string) {
-		RESTAssert.assertNotEmpty(string, Status.PRECONDITION_FAILED);
+	public static void assertNotEmpty(final String string) {
+		RESTAssert.assertNotEmpty(string, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -123,9 +129,9 @@ public class RESTAssert {
 	 * @param status
 	 *            the status code to throw
 	 * @throws WebApplicationException
-	 *             with status code 412 (Precondition failed)
+	 *             with given status code
 	 */
-	public static void assertNotEmpty(String string, Status status) {
+	public static void assertNotEmpty(final String string, final Status status) {
 		RESTAssert.assertNotNull(string, status);
 		RESTAssert.assertFalse(string.isEmpty(), status);
 	}
@@ -138,8 +144,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed)
 	 */
-	public static void assertNotEmpty(Collection<?> collection) {
-		RESTAssert.assertNotEmpty(collection, Status.PRECONDITION_FAILED);
+	public static void assertNotEmpty(final Collection<?> collection) {
+		RESTAssert.assertNotEmpty(collection, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -150,9 +156,9 @@ public class RESTAssert {
 	 * @param status
 	 *            the status code to throw
 	 * @throws WebApplicationException
-	 *             with status code 412 (Precondition failed)
+	 *             with given status code
 	 */
-	public static void assertNotEmpty(Collection<?> collection, Status status) {
+	public static void assertNotEmpty(final Collection<?> collection, final Status status) {
 		RESTAssert.assertNotNull(collection, status);
 		RESTAssert.assertFalse(collection.isEmpty(), status);
 	}
@@ -165,8 +171,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed)
 	 */
-	public static void assertSingleElement(Collection<?> collection) {
-		RESTAssert.assertSingleElement(collection, Status.PRECONDITION_FAILED);
+	public static void assertSingleElement(final Collection<?> collection) {
+		RESTAssert.assertSingleElement(collection, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -177,9 +183,9 @@ public class RESTAssert {
 	 * @param status
 	 *            the status code to throw
 	 * @throws WebApplicationException
-	 *             with status code 412 (Precondition failed)
+	 *             with given status code
 	 */
-	public static void assertSingleElement(Collection<?> collection, Status status) {
+	public static void assertSingleElement(final Collection<?> collection, final Status status) {
 		RESTAssert.assertNotNull(collection, status);
 		RESTAssert.assertTrue(collection.size() == 1, status);
 	}
@@ -195,8 +201,8 @@ public class RESTAssert {
 	 * @throws WebApplicationException
 	 *             with status code 412 (Precondition failed)
 	 */
-	public static void assertEquals(Object one, Object two) {
-		RESTAssert.assertEquals(one, two, Status.PRECONDITION_FAILED);
+	public static void assertEquals(final Object one, final Object two) {
+		RESTAssert.assertEquals(one, two, RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	/**
@@ -210,10 +216,10 @@ public class RESTAssert {
 	 * @param status
 	 *            the status code to throw
 	 * @throws WebApplicationException
-	 *             with status code 412 (Precondition failed)
+	 *             with given status code
 	 */
 	@SuppressWarnings("null")
-	public static void assertEquals(Object one, Object two, Status status) {
+	public static void assertEquals(final Object one, final Object two, final Status status) {
 		if ((one == null) && (two == null)) {
 			return;
 		}
