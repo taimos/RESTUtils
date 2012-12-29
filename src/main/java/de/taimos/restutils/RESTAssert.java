@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response.Status;
  * @author thoeger
  * 
  */
-public class RESTAssert {
+public final class RESTAssert {
 
 	/**
 	 * The default status code that is thrown<br>
@@ -24,6 +24,10 @@ public class RESTAssert {
 	// #############################################################
 	// Basic methods to assert true/false (used by all other assertions)
 	// #############################################################
+
+	private RESTAssert() {
+		//
+	}
 
 	/**
 	 * returns if condition evaluates to true and throws {@link WebApplicationException}(412) if it evaluates to false
