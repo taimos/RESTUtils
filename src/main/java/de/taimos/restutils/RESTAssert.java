@@ -231,4 +231,31 @@ public final class RESTAssert {
 		RESTAssert.assertTrue(one.equals(two), status);
 	}
 
+	/**
+	 * assert that string matches [0-9]*
+	 * 
+	 * @param string
+	 *            the string to check
+	 * @throws WebApplicationException
+	 *             with status code 412 (Precondition failed)
+	 */
+	public static void assertInt(final String string) {
+		RESTAssert.assertInt(string, RESTAssert.DEFAULT_STATUS_CODE);
+	}
+
+	/**
+	 * assert that string matches [0-9]*
+	 * 
+	 * @param string
+	 *            the string to check
+	 * @param status
+	 *            the status code to throw
+	 * @throws WebApplicationException
+	 *             with given status code
+	 */
+	public static void assertInt(final String string, final Status status) {
+		RESTAssert.assertNotEmpty(string);
+		RESTAssert.assertTrue(string.matches("[0-9]*"), status);
+	}
+
 }
