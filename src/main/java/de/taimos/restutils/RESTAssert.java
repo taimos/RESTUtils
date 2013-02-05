@@ -19,7 +19,15 @@ public final class RESTAssert {
 	 * The default status code that is thrown<br>
 	 * HTTP 412 (Precondition failed)
 	 */
-	private static final Status DEFAULT_STATUS_CODE = Status.PRECONDITION_FAILED;
+	private static Status DEFAULT_STATUS_CODE = Status.PRECONDITION_FAILED;
+
+	/**
+	 * @param _status
+	 *            the new default status code
+	 */
+	public static void changeFailStatus(final Status _status) {
+		RESTAssert.DEFAULT_STATUS_CODE = _status;
+	}
 
 	// #############################################################
 	// Basic methods to assert true/false (used by all other assertions)
@@ -79,8 +87,30 @@ public final class RESTAssert {
 	 */
 	public static void assertFalse(final boolean condition, final Status status) {
 		if (condition) {
-			throw new WebApplicationException(status);
+			RESTAssert.fail(status);
 		}
+	}
+
+	/**
+	 * fails every time; same as assertTrue(false)
+	 * 
+	 * @param status
+	 *            the status to fail with
+	 * @throws WebApplicationException
+	 *             with given status code
+	 */
+	public static void fail(final Status status) {
+		throw new WebApplicationException(status);
+	}
+
+	/**
+	 * fails every time; same as assertTrue(false)
+	 * 
+	 * @throws WebApplicationException
+	 *             with given status code
+	 */
+	public static void fail() {
+		RESTAssert.fail(RESTAssert.DEFAULT_STATUS_CODE);
 	}
 
 	// ###############################################################
