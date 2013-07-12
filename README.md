@@ -5,7 +5,8 @@ Utility classes for JAX-RS
 
 ### RESTAssert
 
-RESTAssert provides static methods to assert specific properties of requests and other objects. IF the assertion is not satified it throw a WebApplicationException.
+RESTAssert provides static methods to assert specific properties of requests and other objects.
+If the assertion is not satisfied it throw a WebApplicationException.
 
 ### Other tools
 
