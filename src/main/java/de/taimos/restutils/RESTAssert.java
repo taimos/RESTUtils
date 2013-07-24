@@ -284,4 +284,5 @@ public final class RESTAssert {
 		RESTAssert.assertNotNull(pattern);
 		RESTAssert.assertTrue(string.matches(pattern), status);
 	}
+	
 }
