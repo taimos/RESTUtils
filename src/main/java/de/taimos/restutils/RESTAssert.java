@@ -240,7 +240,7 @@ public final class RESTAssert {
 	}
 	
 	/**
-	 * assert that string matches [0-9]*
+	 * assert that string matches [+-]?[0-9]*
 	 * 
 	 * @param string the string to check
 	 * @throws WebApplicationException with status code 412 (Precondition failed)
@@ -250,7 +250,7 @@ public final class RESTAssert {
 	}
 	
 	/**
-	 * assert that string matches [0-9]*
+	 * assert that string matches [+-]?[0-9]*
 	 * 
 	 * @param string the string to check
 	 * @param status the status code to throw
@@ -258,7 +258,7 @@ public final class RESTAssert {
 	 */
 	public static void assertInt(final String string, final Status status) {
 		RESTAssert.assertNotEmpty(string);
-		RESTAssert.assertPattern(string, "[0-9]*", status);
+		RESTAssert.assertPattern(string, "[+-]?[0-9]*", status);
 	}
 	
 	/**

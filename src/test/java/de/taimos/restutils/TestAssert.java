@@ -22,7 +22,7 @@ import org.junit.Test;
  * @author thoeger
  * 
  */
-@SuppressWarnings("javadoc")
+@SuppressWarnings({"javadoc", "null"})
 public class TestAssert {
 	
 	@Test()
@@ -104,5 +104,30 @@ public class TestAssert {
 	@Test
 	public void testEquals() {
 		RESTAssert.assertEquals("Foo", "Foo");
+	}
+	
+	@Test
+	public void testEqualsNull() {
+		RESTAssert.assertEquals(null, null);
+	}
+	
+	@Test
+	public void testInt() {
+		RESTAssert.assertInt("123");
+	}
+	
+	@Test
+	public void testIntPlus() {
+		RESTAssert.assertInt("+123");
+	}
+	
+	@Test
+	public void testIntNegative() {
+		RESTAssert.assertInt("-123");
+	}
+	
+	@Test(expected = WebApplicationException.class)
+	public void testIntFail() {
+		RESTAssert.assertInt("Foo");
 	}
 }
