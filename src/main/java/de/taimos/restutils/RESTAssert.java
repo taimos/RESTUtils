@@ -34,10 +34,12 @@ public final class RESTAssert {
 	
 	/** Pattern for date 'yyyy-MM-dd' */
 	public static final String PATTERN_DATE = "\\d{4}-\\d{2}-\\d{2}";
-	/** Pattern for date 'HH:mm:ss' */
+	/** Pattern for time 'HH:mm:ss' */
 	public static final String PATTERN_TIME = "[0-2][0-9]:[0-5][0-9]:[0-5][0-9]";
-	/** Pattern for date 'yyyy-MM-dd HH:mm:ss' */
+	/** Pattern for datetime 'yyyy-MM-dd HH:mm:ss' */
 	public static final String PATTERN_DATETIME = RESTAssert.PATTERN_DATE + " " + RESTAssert.PATTERN_TIME;
+	/** Pattern for ISO date */
+	public static final String PATTERN_ISO = RESTAssert.PATTERN_DATE + "([tT]" + RESTAssert.PATTERN_TIME + "(\\.\\d{1,3})?)?([zZ]|[+-]\\d{2}:?\\d{2})?";
 	
 	
 	/**
