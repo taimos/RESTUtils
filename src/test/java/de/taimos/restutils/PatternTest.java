@@ -5,7 +5,7 @@ import javax.ws.rs.WebApplicationException;
 import org.junit.Test;
 
 @SuppressWarnings("javadoc")
-public class PatternTests {
+public class PatternTest {
 	
 	@Test
 	public void testDate() {
