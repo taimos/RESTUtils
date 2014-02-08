@@ -3,6 +3,8 @@ RESTUtils
 
 Utility classes for JAX-RS
 
+[![Build Status](https://travis-ci.org/taimos/restutils.png?branch=master)](https://travis-ci.org/taimos/restutils)
+
 ### RESTAssert
 
 RESTAssert provides static methods to assert specific properties of requests and other objects.
