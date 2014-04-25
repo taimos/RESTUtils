@@ -22,7 +22,7 @@ import org.junit.Test;
  * @author thoeger
  * 
  */
-@SuppressWarnings({"javadoc", "null"})
+@SuppressWarnings({"javadoc"})
 public class TestAssert {
 	
 	@Test()
