@@ -3,7 +3,7 @@ RESTUtils
 
 Utility classes for JAX-RS
 
-[![Build Status](https://travis-ci.org/taimos/restutils.png?branch=master)](https://travis-ci.org/taimos/restutils)
+[![Build Status](https://travis-ci.org/taimos/RESTUtils.png?branch=master)](https://travis-ci.org/taimos/RESTUtils)
 
 ### RESTAssert
 
