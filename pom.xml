@@ -6,7 +6,7 @@
 		<version>2</version>
 	</parent>
 	<artifactId>restutils</artifactId>
-	<version>1.5</version>
+	<version>1.6-SNAPSHOT</version>
 	<name>Taimos RESTUtils</name>
 	<description>Utility classes for JAX-RS</description>
 	<packaging>jar</packaging>
@@ -40,7 +40,7 @@
 		<url>git://github.com/taimos/RESTUtils.git</url>
 		<connection>scm:git:git://github.com/taimos/RESTUtils.git</connection>
 		<developerConnection>scm:git:git@github.com:taimos/RESTUtils.git</developerConnection>
-		<tag>v1.5</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
 		<system>github</system>
