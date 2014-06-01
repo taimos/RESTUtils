@@ -20,9 +20,9 @@ import org.junit.Test;
 
 /**
  * @author thoeger
- * 
+ *
  */
-@SuppressWarnings({"javadoc"})
+@SuppressWarnings({"javadoc", "null"})
 public class TestAssert {
 	
 	@Test()
